@@ -11,7 +11,6 @@
       const form = document.getElementById('form');
       const formData = new FormData(form);
 
-      // Show loader
       document.getElementById('loader').style.display = 'block';
       document.getElementById('overlay').style.display = 'block';
       document.body.classList.add('no-interact');
@@ -23,7 +22,7 @@
         .then(response => response.json())
         .then(data => {
           console.log(data);
-          // Hide loader
+
           document.getElementById('loader').style.display = 'none';
           document.getElementById('overlay').style.display = 'none';
           document.body.classList.remove('no-interact');
@@ -46,7 +45,7 @@
         })
         .catch(error => {
           console.error('Error:', error);
-          // Hide loader in case of error
+
           document.getElementById('loader').style.display = 'none';
           document.getElementById('overlay').style.display = 'none';
           document.body.classList.remove('no-interact');
@@ -91,15 +90,12 @@
   document.addEventListener('DOMContentLoaded', () => {
     const employeeIDInput = document.getElementById('employeeID');
 
-    // Function to focus the input field
     const focusInput = () => {
       employeeIDInput.focus();
     };
 
-    // Focus the input field immediately when the page loads
     focusInput();
 
-    // Continuously ensure the input field has focus
     setInterval(focusInput, 100);
   });
 </script>
